@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="GuessController.js"></script>
+</head>
+<style>
+    .container{
+        text-align: center;
+    }
+    body{
+        background-color: purple;
+    }
+    button:hover{
+        background-color: orange;
+    }
+</style>
+<body>
+    <div id="app"></div>
+
+    <script>
+        //Model
+        let talletViTryktePå = 0;
+        let guessNumberText = "Trykk på et nr du tror er riktig!";
+        let number = getRandomNumber();
+        
+
+        //View
+        updateView();
+        function updateView(){
+            let isCorrectOrnotText;
+            if(guessNumberText==number){
+                isCorrectOrnotText = `du har tippet riktig!`;
+            }
+            document.getElementById("app").innerHTML = `
+            <div class="container">
+            <h3>GuessTheNumber</h3>
+            <p>Gjett nr mellom 1-10</p>
+            <p id="outputtext">${guessNumberText}</p>
+            <p id="outputtall">${talletViTryktePå}</p>
+            
+            <input type="text" onchange="talletViTryktePå=this.value" id="userInput"><button id="btn" onclick="enter()">Enter</button><br>
+            <hr>
+            <button class="button" onclick="tall(this)">1</button>
+            <button class="button" onclick="tall(this)">2</button>
+            <button class="button" onclick="tall(this)">3</button>
+            <button class="button" onclick="tall(this)">4</button>
+            <button class="button" onclick="tall(this)">5</button>
+            <button class="button" onclick="tall(this)">6</button>
+            <button class="button" onclick="tall(this)">7</button>
+            <button class="button" onclick="tall(this)">8</button>
+            <button class="button" onclick="tall(this)">9</button>
+            <button class="button" onclick="tall(this)">10</button>
+
+            <button class="button" onclick="prøvPåNytt()">Prøv på nytt!</button>
+            </div>
+
+
+
+
+
+        `}
+
+
+        //Controller
+        // function tall(Knappen){
+        //      talletViTryktePå = Knappen.innerHTML;
+        //     //document.getElementById("userInput").value = talletViTryktePå;
+        //     // = talletViTryktePå;
+        //     updateView();
+        // }
+        // function enter(){
+        //     console.log(talletViTryktePå);
+        //     console.log(number);
+        //     if (talletViTryktePå == number){
+        //         guessNumberText = `Du gjettet riktig, din nr var ${number}!`
+        //     } else if (talletViTryktePå < number) {
+        //         guessNumberText = "Du gjettet for lavt!"
+        //     }
+
+        //     else if (talletViTryktePå > number){
+        //         guessNumberText = "Du gjettet for høyt!"
+        //     } else if (talletViTryktePå < 0 || isNaN(talletViTryktePå) == true) { //isNaN sjekker om noe ikke er et tall. isNaN(ikke et tall) = true isNaN(tall) = false 
+        //         guessNumberText = "Vennligst skriv inn et tall";
+        //     }
+        //     updateView();
+            
+        // }
+        // function getRandomNumber(){
+        //     return ( Math.floor(Math.random() * 10) + 1);
+        // }
+        // function prøvPåNytt(){
+        //     guessNumberText = "";
+        //     talletViTryktePå = "";
+        //     number = getRandomNumber();
+        //     updateView();
+        // }
+
+
+
+
+
+
+
+
+    </script>
+
+    
+    
+</body>
+</html>

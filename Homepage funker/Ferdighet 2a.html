@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet 2a</title>
+    <style>
+        body{
+            background-color: rgb(211, 179, 147);
+        }
+    </style>
+</head>
+<body onload="testOnLoad()">
+    <p>Ferdighet 2a - Alternative eventhandlere: onchange osv.</p>
+    <p>Se i console loggen</p>
+    <input type="text" onchange="testOnChange()" onkeydown="testOnKeyDown()" />
+    <h3 ondblclick="testOnDblClick()" oncontextmenu="testContextMenu()">Test test test</h3>
+    <h2 id="info" style="visibility: hidden;"></h2>
+
+    <hr/>
+    
+    <script>
+        function testOnLoad() {
+            console.log(document.getElementById('info').innerHTML = 'onload');
+        }
+
+        function testOnChange() {
+            console.log(document.getElementById('info').innerHTML = 'onchange');
+        }
+
+        function testOnKeyDown() {
+            console.log(document.getElementById('info').innerHTML = 'onkeydown');
+        }
+
+        function testOnDblClick() {
+            console.log(document.getElementById('info').innerHTML = 'ondblclick');
+        }
+
+        function testContextMenu() {
+            console.log(document.getElementById('info').innerHTML = 'oncontextmenu');
+            return false;
+        }
+    </script>
+</body>
+</html>

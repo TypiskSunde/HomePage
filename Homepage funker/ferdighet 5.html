@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<style>
+    body{
+        background-color: orangered;
+    }
+</style>
+<body onload="slowLoad()">
+    <p>Ferdighet 5 - Kode som kjøres når siden lastes vs kode i en funksjon</p>
+    <p id="siden"></p>
+    <div id="picture">
+        <img src="https://cf.bstatic.com/images/hotel/max1280x900/269/269097448.jpg" style="width: 400px; height: 200px" alt="Bilde av hongkong">
+        
+    </div>
+    <p id="body"></p>
+    <hr>
+
+    
+
+    <script>
+        document.getElementById("siden").innerHTML = 'Nettsiden lasten inn: ' + new Date().toTimeString();
+
+        function slowLoad() {
+            document.getElementById("body").innerHTML += "innhold lastet inn: " + new Date().toTimeString();
+        } //Jeg henter body Diven over og legger til text + funksjonen new date().toTimeString(); metoden. 
+    </script>
+</body>
+</html>

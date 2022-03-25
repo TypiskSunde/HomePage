@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Ferdighet 7 - Sette variabel til resultat av et regnestykke. </p>
+   
+    <div id="resultat"></div>
+    
+    <script>
+    var resultatDiv = document.getElementById('resultat');
+        //model
+
+        show()
+        function show(){
+
+           var html =
+           ` 
+           <input id="bredde" type="range" min="100" max="1000" step="1" oninput="calculate()" value="2" />
+            <input id="høyde" type="range" min="100" max="1000" step="1" oninput="calculate()" value="2" />
+            <div id="resultatBox"></div>
+            `;
+
+          resultatDiv.innerHTML = html;  
+        }
+
+        var breddeInput = document.getElementById('bredde');
+        var høydeInput = document.getElementById('høyde');
+        var resultatBox = document.getElementById("resultatBox");
+
+        function calculate() {
+           
+            var breddeVerdi = parseInt(breddeInput.value);
+            var høydeVerdi = parseInt(høydeInput.value); //parseInt gjør om tekst til tall. 1 + 2 blir 3 og ikke 12
+            var areal = breddeVerdi * høydeVerdi;
+            var omkrets = (2 * breddeVerdi + 2 * høydeVerdi);
+            var html = `
+            <div style="
+            background-color: purple;
+            height: ${høydeVerdi}px;
+            width: ${breddeVerdi}px;
+            ">
+            høyden er: ${høydeVerdi}<br>
+            bredden er: ${breddeVerdi}<br>
+            Arealet er: ${areal}<br>
+            omkrets er: ${omkrets}  
+            </div>
+            `;
+
+            resultatBox.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
+viser arealet (bredde*høyde) og omkretsen (2*bredde+2*høyde).
+
+
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hei, her er min quiz med onclick funskjonen! :)</h1>
+    <h2>Spørsmål 1: Hva heter kattene våres?</h2>
+
+    <button id="feil" onclick="feilSvar()">Casper</button>
+    <button id="riktig" onclick="riktigSvar()">Mira</button>
+    <button id="feil1" onclick="feilSvar1()">Casper</button>
+    <button id="riktig1" onclick="riktigSvar1()">Simba</button>
+
+    <h2>Spørmål 2: Hvem av pusene er Bengal katt?</h2>
+
+    <button id="feil2" onclick="feilSvar2()">Simba</button>
+    <button id="riktig2" onclick="riktigSvar2()">Mira</button>
+
+    <script>
+        function feilSvar() {
+            document.getElementById("feil").innerHTML = 'Feil';
+        }
+        function riktigSvar() {
+            document.getElementById("riktig").innerHTML = 'Riktig';
+        }
+        function feilSvar1() {
+            document.getElementById("feil1").innerHTML = 'Feil';
+        }
+        function riktigSvar1() {
+            document.getElementById("riktig1").innerHTML = 'Riktig';
+        }
+        function feilSvar2() {
+            document.getElementById("feil2").innerHTML = 'Feil';
+        }
+        function riktigSvar2() {
+            document.getElementById("riktig2").innerHTML = 'Riktig';
+        }
+    </script>
+ 
+    
+    
+    
+</body>
+</html>

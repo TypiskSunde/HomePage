@@ -1,0 +1,31 @@
+body {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+.rutenett {
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px;
+
+}
+
+.boks{
+
+}
+
+.boksFarge{
+    
+}
+
+
+
+
+
+
+}
+h1 {
+    color: darkolivegreen;
+}
+p {
+    color: darkolivegreen;

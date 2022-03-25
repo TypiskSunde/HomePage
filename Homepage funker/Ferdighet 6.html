@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <title>Ferdighet 6</title>
+    <style>
+        body{
+            background-color: rgb(211, 179, 147);
+        }
+    </style>
+</head>
+<body>
+    <p>Ferdighet 6 - Sette sammen tekst av flere deler  og  bruke dette til å bygge HTML dynamisk</p>
+    
+    <input id="sizeSlider" type="range" min="100" max="500" step="10" oninput="showDiv()" />
+    
+    <br /><input id="textInput" type="text" oninput="showDiv()" value="endre teksten!" />
+    <br/><input id="borderRadChooser" type="range" min="0" max="100" step="2" oninput="showDiv()" />
+    
+    <select id="colorChooser" onchange="showDiv()">
+        <option value="red">Red color</option>
+        <option selected value="green">Green color</option>
+        <option value="blue">Blue color</option>
+    </select>
+    <select id="borderColorChooser" onchange="showDiv()">
+        <option value="black">Black color</option>
+        <option selected value="grey">Grey color</option>
+        <option value="none">No border</option>
+    </select>
+    <div id="resultat"></div>
+    <div id="resultatHtml" style="font-family: monospace"></div>
+    <hr/>
+    
+    <script>
+        var resultatDiv = document.getElementById('resultat');
+        var resultatHtmlDiv = document.getElementById('resultatHtml');
+        var sizeSlider = document.getElementById('sizeSlider');
+        var textInput = document.getElementById('textInput');
+        var colorChooser = document.getElementById('colorChooser');
+        var borderColorChooser = document.getElementById('borderColorChooser');
+        var borderRadChooser = document.getElementById('borderRadChooser');
+        showDiv();
+        function showDiv() {
+            resultatDiv.innerHTML = '<div style=" text-align: center;'
+                + 'background-color: ' + colorChooser.value 
+                + '; border: 5px solid ' + borderColorChooser.value + '; ' 
+                + 'border-radius: ' + borderRadChooser.value + 'px; '
+                + 'width: ' + sizeSlider.value + 'px; '
+                + 'height: ' + sizeSlider.value + 'px; '
+                + '">' +
+                textInput.value + '</div>';
+            resultatHtmlDiv.innerText = resultatDiv.innerHTML;
+        }
+    </script>
+</body>
+</html>

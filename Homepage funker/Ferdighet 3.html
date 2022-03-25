@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet 3</title>
+    <style>
+        body{
+            background-color: rgb(211, 179, 147);
+        }
+    </style>
+</head>
+<body>
+    <p>Ferdighet 3 - spesialtilfelle, this og gjøre noe med det elementet man trykker på (eller som utløser eventet)</p>
+    Samenlign dette eksempelet med "Ferdighet 2 - Onclick - kjøre funksjon som endrer innerHTML ut fra Id"!
+    <h2 id="z" onclick="doSomething(this)">AAAAAAAAAAAAAAAA</h2>
+    <h2 id="y" onclick="doSomething(this)">BBBBBBBBBBBBBBBB</h2>
+    <table style="font-size: 30px;">
+        <tr>
+            <td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td>
+        </tr>
+
+        <tr>
+            <td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td>
+        </tr>
+        <tr>
+            <td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td>
+        </tr>
+        <tr>
+            <td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td><td onmouseover="changeOtoX(this)" onmouseout="changeXtoO(this)">o</td>
+        </tr>
+    </table>
+    <hr/>
+    <button onclick="location.href='menu.html'">Tilbake til oppgave oversikt</button>
+
+    <script>
+        function doSomething(etNavnDuVelgerSelv) {
+            // Nå er etNavnDuVelgerSelv det samme som om vi hadde kjørt:
+            // var etNavnDuVelgerSelv = document.getElementById('z');
+            // eller
+            // var etNavnDuVelgerSelv = document.getElementById('y');
+            // HVIS og bare hvis du trykker på akkurat det elementet som har id=z
+            etNavnDuVelgerSelv.innerHTML = 'CCCCCCCCCCCCCCCC';
+        }
+        function changeOtoX(testO){
+            testO.innerHTML = "x";
+        }
+        function changeXtoO(testX){
+            testX.innerHTML = "o";
+        }
+    </script>
+</body>
+</html>

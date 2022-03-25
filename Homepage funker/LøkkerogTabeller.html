@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Løkker og Tabelle</h3>
+    <ul>
+        <li>
+            Løkker
+            <ul>
+                <li><tt>While</tt></li>
+                <li><tt>For</tt></li>
+            </ul>
+        </li>
+        <li>Tabeller - "array"</li>
+    </ul>
+    <hr>
+    <script type="text/javascript">
+
+        var names = ['Per', 'Pål', 'Espen', 'Chris', 'Thomas', 'Kristoffer']; // Dette er en måte å lage array på. 
+        document.write(names.length);
+
+        for (var i = 0; i < names.length; i++) {
+    document.write('Hei, ' + names[i] + '<br/>'); //Med for løkke så kan jeg ta alt på en linje. 
+     }
+
+    // var i = 1;
+    // while (i <= 3) {                // While er en gjentakene if setning. 
+    //     document.write('Chris ');   //Hvis kriteriene mellom parantense er riktig, så kjører den koden. 
+    //     i++;
+    // }
+     
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet 4</title>
+    <style>
+        body{
+            font-size: large;
+            padding: 0;
+            padding-left: 10px;
+            margin: 0;
+            background-color: rgb(211, 179, 147);
+        }
+        .knapp{
+            width: 40px;
+            height: 40px;
+        }
+        #kodelås{
+            width: fit-content;
+            height: fit-content;
+            background-color: black;
+            border: 5px solid black;
+        }
+        #tallrekke{
+            width: 135px;
+            height: 20px;
+            overflow: hidden;
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <p>Ferdighet 4 - Variabel utenfor funksjon og innenfor funksjon, samt sette sammen tekst av flere deler</p>
+    <!-- <button onclick="tell()">Tell!</button>
+    <div id="info">Trykk på knappen!</div> -->
+    <div id="kodelås">
+        <button class="knapp" onclick="tastTall(this)">1</button>
+        <button class="knapp" onclick="tastTall(this)">2</button>
+        <button class="knapp" onclick="tastTall(this)">3</button>
+    </br>
+
+        <button class="knapp" onclick="tastTall(this)">4</button>
+        <button class="knapp" onclick="tastTall(this)">5</button>
+        <button class="knapp" onclick="tastTall(this)">6</button>
+    </br>
+
+        <button class="knapp" onclick="tastTall(this)">7</button>
+        <button class="knapp" onclick="tastTall(this)">8</button>
+        <button class="knapp" onclick="tastTall(this)">9</button>
+    </div>
+    </br>
+
+    <div id="tallrekke">Tastet inn: </div>
+    <div id="resultat" style="visibility: hidden;"></div>
+    <div id="visResultat"></div>
+    <button id="reset" onclick="location.reload()">Reset</button>
+
+    <hr/>
+    <button onclick="location.href='menu.html'">Tilbake til oppgave oversikt</button>
+
+    <script>
+        // var tallA = 0;
+        // var tekstA = 'TekstA ';
+        // console.log(tallA, tekstA);
+
+        // function tell() {
+        //     var tallB = 0;
+        //     var tekstB = 'TekstB ';
+
+        //     tallA++;
+        //     tallB++;
+        //     tekstA += '*';
+        //     tekstB += '*';
+
+        //     document.getElementById('info').innerHTML =
+        //         'TallA=' + tallA +
+        //         '<br/>TallB=' + tallB +
+        //         '<br/>TekstA=' + tekstA +
+        //         '<br/>TekstB=' + tekstB;
+        // }
+
+        function tastTall(nummer){
+            var tall = nummer.innerHTML;
+            var x = document.getElementById("resultat").innerHTML += tall;
+            var y= document.getElementById("visResultat").innerHTML;
+
+            document.getElementById("tallrekke").innerHTML += tall + " ";
+
+            if (x == "3812"){
+                document.getElementById("visResultat").innerHTML = `Safen er åpnet. <button onClick="window.location.reload();">Prøv igjen</button>`;
+                document.getElementById("kodelås").style.backgroundColor = "green";
+                document.getElementById("kodelås").style.borderColor = "green";
+            }
+            else if (x.length < 4){
+                document.getElementById("visResultat").innerHTML = "Tast flere tall.";
+            }
+            else{
+                document.getElementById("visResultat").innerHTML = `Feil kode. <button onclick="location.reload();">Prøv igjen</button>`;
+                document.getElementById("reset").style.visibility = "hidden";
+                document.getElementById("kodelås").style.backgroundColor = "darkred";
+                document.getElementById("kodelås").style.borderColor = "darkred";
+            }
+        }
+
+    </script>
+</body>
+</html>

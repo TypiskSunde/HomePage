@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ferdighet 8</title>
+    <style>
+        body{
+            background-color: rgb(211, 179, 147);
+        }
+        .color{
+            background-color: hotpink;
+        }
+        .border{
+            border: 2px solid green;
+        }
+        .textColor{
+            color: blue;
+        }
+        .fontSize{
+            font-size: 40px;
+        }
+        .textAlign{
+            text-align: right;
+        }
+        div.selected::before {
+            content: "🡆";
+        }
+        div.selected::after {
+            content: "🡄";
+        }
+
+    </style>
+</head>
+<body>
+    <div>Background Color
+        <input id="check1" type="checkbox" onchange="toggleBackgroundColor(this)" />
+    </div>
+    <div>Border
+        <input id="check2" type="checkbox" onchange="toggleBorder(this)" />
+    </div>
+    <div>Text Color
+        <input id="check3" type="checkbox" onchange="toggleTextColor(this)" />
+    </div>
+    <div>Text Size
+        <input id="check4" type="checkbox" onchange="toggleSize(this)" />
+    </div>
+    <div>Text Alignment
+        <input id="check5" type="checkbox" onchange="toggleAlign(this)" />
+    </div>
+    <hr/>
+    <div>Select one of these to change it when you tick the boxes above:</div>
+    <div id="checked">This one:
+        <input id="check6" type="checkbox" onchange="toggleBox1(this)" />
+    </div>
+    <div id="checked2">Or this one:
+        <input id="check7" type="checkbox" onchange="toggleBox2(this)" />
+    </div>
+
+    <hr/>
+    <button onclick="location.href='menu.html'">Tilbake til oppgave oversikt</button>
+
+    <script>
+        var selectedBox = document.getElementsByClassName('selected');
+
+        function toggleBackgroundColor(pressed) {
+            selectedBox[0].classList.toggle('color', pressed.isChecked);
+        }
+        function toggleBorder(pressed) {
+            selectedBox[0].classList.toggle('border', pressed.isChecked);
+        }
+        function toggleTextColor(pressed) {
+            selectedBox[0].classList.toggle('textColor', pressed.isChecked);
+        }
+        function toggleSize(pressed) {
+            selectedBox[0].classList.toggle('fontSize', pressed.isChecked);
+        }
+        function toggleAlign(pressed) {
+            selectedBox[0].classList.toggle('textAlign', pressed.isChecked);
+        }
+
+        function toggleBox1() {
+            var isChecked = document.getElementById('check6').checked;
+            var notChecked = document.getElementById('check7').checked = false;
+
+            document.getElementById('checked').classList.toggle('selected', isChecked);
+            document.getElementById('checked2').classList.remove('selected', notChecked);
+
+            document.getElementById('check1').checked = checked.classList.contains('color');
+            document.getElementById('check2').checked = checked.classList.contains('border');
+            document.getElementById('check3').checked = checked.classList.contains('textColor');
+            document.getElementById('check4').checked = checked.classList.contains('fontSize');
+            document.getElementById('check5').checked = checked.classList.contains('textAlign');
+        }
+
+        function toggleBox2() {
+            var isChecked = document.getElementById('check7').checked;
+            var notChecked = document.getElementById('check6').checked = false;
+
+            document.getElementById('checked2').classList.toggle('selected', isChecked);
+            document.getElementById('checked').classList.remove('selected', notChecked);
+
+            document.getElementById('check1').checked = checked2.classList.contains('color');
+            document.getElementById('check2').checked = checked2.classList.contains('border');
+            document.getElementById('check3').checked = checked2.classList.contains('textColor');
+            document.getElementById('check4').checked = checked2.classList.contains('fontSize');
+            document.getElementById('check5').checked = checked2.classList.contains('textAlign');
+        }
+
+    </script>
+</body>
+</body>
+</html>
